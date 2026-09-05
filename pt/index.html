@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MovieClipsFactory</title>
+<link rel="icon" href="../assets/icon.svg">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="envoltorio">
+<header class="topo">
+  <img src="../assets/icon.svg" alt="">
+  <span class="nome">MovieClipsFactory</span>
+  <nav><a href="index.html" aria-current="page">Início</a><a href="privacy.html">Privacidade</a><a href="terms.html">Termos</a><a href="data-deletion.html">Exclusão de dados</a><a href="../index.html" class="idioma">English</a></nav>
+</header>
+
+<h1>MovieClipsFactory</h1>
+<p class="sub">Um aplicativo de desktop que transforma vídeos longos em clipes
+verticais — e, quando quem opera pede, envia esses clipes para as contas de
+rede social dele mesmo.</p>
+
+<p>O MovieClipsFactory roda no computador de quem o usa. Não há servidor do
+MovieClipsFactory, não há conta no MovieClipsFactory e não há assinatura. Nada
+sobre quem usa é enviado para lugar nenhum por padrão.</p>
+
+<h2>O que ele faz</h2>
+<ul>
+  <li>Importa um vídeo longo e detecta as cenas dele.</li>
+  <li>Transcreve o diálogo e escolhe os momentos candidatos.</li>
+  <li>Renderiza clipes 9:16 com legenda queimada e, se pedido, narração.</li>
+  <li>Mede cada clipe em qualidade técnica e editorial, e recusa os que não
+      passam.</li>
+  <li>Envia um clipe aprovado para o YouTube, o TikTok, o Instagram ou o
+      Facebook pela API oficial de cada um, usando a conta autorizada de quem
+      opera.</li>
+</ul>
+
+<h2>O que ele não é</h2>
+<div class="caixa">
+<p><strong>Não é um serviço hospedado nem um produto multiusuário.</strong>
+Não há cadastro, não há servidor guardando dados de ninguém e não existe uma
+versão em que outras pessoas entrem. É um programa que alguém instala e
+executa.</p>
+<p>Isso importa para a revisão das plataformas, então fica dito sem rodeio. As
+<em>Content Sharing Guidelines</em> do TikTok listam, entre os usos não
+aceitáveis:</p>
+<blockquote>"A utility tool to help upload contents to the account(s) you or
+your team manages. ❌"</blockquote>
+<p>O MovieClipsFactory é exatamente esse tipo de ferramenta, e portanto
+<strong>não é elegível</strong> para acesso auditado à Content Posting API do
+TikTok. Por isso ele usa o caminho não auditado: <code>video.upload</code>, que
+coloca o vídeo na caixa de entrada do TikTok como rascunho, para a própria
+pessoa terminar e postar dentro do aplicativo. Ele não afirma o contrário para
+passar numa revisão.</p>
+</div>
+
+<h2>Como ele trata contas e credenciais</h2>
+<ul>
+  <li>As contas são conectadas pela tela de OAuth da própria plataforma. O
+      aplicativo nunca vê nem pede uma senha.</li>
+  <li>Os tokens de acesso ficam <strong>cifrados pela DPAPI do
+      Windows</strong> naquele computador. Nunca em texto claro, nunca em log,
+      nunca versionados.</li>
+  <li>A publicação vem <strong>desligada</strong>, e postar em público é um
+      segundo interruptor, separado, também desligado.</li>
+  <li>Um portão de direitos bloqueia qualquer publicação cujo material não
+      tenha sido declarado explicitamente como material que quem opera tem o
+      direito de usar.</li>
+</ul>
+
+<h2>Documentos</h2>
+<ul>
+  <li><a href="privacy.html">Política de Privacidade</a> — o que fica no
+      computador, o que sai dele e para onde vai.</li>
+  <li><a href="terms.html">Termos de Uso</a> — o que o aplicativo é e pelo que
+      quem opera responde.</li>
+  <li><a href="data-deletion.html">Exclusão e tratamento de dados</a> — como
+      apagar tudo e como revogar o acesso em cada plataforma.</li>
+</ul>
+
+<footer>
+  <p>O MovieClipsFactory é um aplicativo pessoal de desktop. Não é uma empresa e não é um serviço hospedado.</p>
+  <p>Contato: <a href="mailto:vidotofernandes@gmail.com">vidotofernandes@gmail.com</a></p>
+  <p><a href="privacy.html">Privacidade</a>
+     · <a href="terms.html">Termos</a>
+     · <a href="data-deletion.html">Exclusão de dados</a></p>
+</footer>
+</div>
+</body>
+</html>
+
