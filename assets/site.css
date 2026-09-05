@@ -1,0 +1,71 @@
+/* Uma folha só. O site é pequeno e é lido por revisores de plataforma:
+   legibilidade vale mais do que efeito. */
+:root {
+  --tinta: #16161a;
+  --tinta-fraca: #55555f;
+  --fundo: #ffffff;
+  --fundo-caixa: #f6f6f8;
+  --borda: #e2e2e8;
+  --destaque: #d63c66;
+  --largura: 46rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tinta: #ececf1;
+    --tinta-fraca: #9a9aa6;
+    --fundo: #101014;
+    --fundo-caixa: #191920;
+    --borda: #2b2b35;
+    --destaque: #e8557c;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--tinta);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.envoltorio { max-width: var(--largura); margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+header.topo {
+  display: flex; align-items: center; gap: .85rem;
+  padding-bottom: 1.25rem; margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--borda); flex-wrap: wrap;
+}
+/* A borda existe porque o ícone tem fundo escuro: sem ela, no tema
+   escuro ele deixa de ter forma e vira texto flutuando. */
+header.topo img { width: 44px; height: 44px; border-radius: 10px;
+                  border: 1px solid var(--borda); }
+header.topo .nome { font-weight: 650; font-size: 1.05rem; letter-spacing: -.01em; }
+header.topo nav { margin-left: auto; display: flex; gap: 1rem; flex-wrap: wrap; }
+header.topo nav a { color: var(--tinta-fraca); text-decoration: none; font-size: .92rem; }
+header.topo nav a:hover, header.topo nav a[aria-current] { color: var(--destaque); }
+h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 .35rem; }
+h2 { font-size: 1.18rem; margin: 2.2rem 0 .6rem; letter-spacing: -.01em; }
+h3 { font-size: 1rem; margin: 1.5rem 0 .4rem; }
+p, li { color: var(--tinta); }
+.sub { color: var(--tinta-fraca); margin-top: 0; }
+a { color: var(--destaque); }
+.caixa {
+  background: var(--fundo-caixa); border: 1px solid var(--borda);
+  border-radius: 10px; padding: 1rem 1.15rem; margin: 1.4rem 0;
+}
+.caixa p:first-child { margin-top: 0; }
+.caixa p:last-child { margin-bottom: 0; }
+blockquote {
+  margin: 1rem 0; padding: .1rem 0 .1rem 1rem;
+  border-left: 3px solid var(--borda); color: var(--tinta-fraca);
+}
+.tabela-rolante { overflow-x: auto; margin: 1.2rem 0; }
+table { border-collapse: collapse; width: 100%; font-size: .93rem; }
+th, td { text-align: left; padding: .55rem .7rem; border-bottom: 1px solid var(--borda); vertical-align: top; }
+th { color: var(--tinta-fraca); font-weight: 600; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .89em; }
+footer {
+  margin-top: 3.5rem; padding-top: 1.25rem;
+  border-top: 1px solid var(--borda); color: var(--tinta-fraca); font-size: .88rem;
+}
+footer a { color: var(--tinta-fraca); }
+.idioma { font-size: .88rem; color: var(--tinta-fraca); }
