@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MovieClipsFactory</title>
+<link rel="icon" href="assets/icon.svg">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="envoltorio">
+<header class="topo">
+  <img src="assets/icon.svg" alt="">
+  <span class="nome">MovieClipsFactory</span>
+  <nav><a href="index.html" aria-current="page">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="data-deletion.html">Data deletion</a><a href="pt/index.html" class="idioma">Português</a></nav>
+</header>
+
+<h1>MovieClipsFactory</h1>
+<p class="sub">A desktop application that turns long videos into vertical
+clips — and, when its operator asks, sends those clips to their own social
+accounts.</p>
+
+<p>MovieClipsFactory runs on the computer of the person using it. There is no
+MovieClipsFactory server, no MovieClipsFactory account, and no subscription.
+Nothing about the person who uses it is sent anywhere by default.</p>
+
+<h2>What it does</h2>
+<ul>
+  <li>Imports a long video and detects its scenes.</li>
+  <li>Transcribes the dialogue and picks candidate moments.</li>
+  <li>Renders 9:16 clips with burned-in captions and, optionally, narration.</li>
+  <li>Scores each clip for technical and editorial quality, and refuses the
+      ones that do not pass.</li>
+  <li>Uploads an approved clip to YouTube, TikTok, Instagram or Facebook
+      through each platform's official API, using the operator's own
+      authorised account.</li>
+</ul>
+
+<h2>What it is not</h2>
+<div class="caixa">
+<p><strong>It is not a hosted service and not a multi-user product.</strong>
+There is no sign-up, no server that holds anyone's data, and no version of
+this that other people log into. It is a program someone installs and runs.</p>
+<p>This matters for platform review, so it is stated plainly rather than
+dressed up. TikTok's <em>Content Sharing Guidelines</em> list, among
+unacceptable use cases:</p>
+<blockquote>"A utility tool to help upload contents to the account(s) you or
+your team manages. ❌"</blockquote>
+<p>MovieClipsFactory is exactly that kind of tool, so it is <strong>not
+eligible</strong> for audited Content Posting API access on TikTok. It
+therefore uses the unaudited path: <code>video.upload</code>, which places the
+video in the creator's TikTok inbox as a draft for that person to finish and
+post inside the TikTok app. It does not claim otherwise in order to pass a
+review.</p>
+</div>
+
+<h2>How it treats accounts and credentials</h2>
+<ul>
+  <li>Accounts are connected by the platform's own OAuth screen. The
+      application never sees or asks for a password.</li>
+  <li>Access tokens are stored <strong>encrypted by the Windows DPAPI</strong>
+      on that computer. They are never written in plain text, never logged and
+      never committed to source control.</li>
+  <li>Publishing is <strong>off by default</strong>, and public posting is a
+      second, separate switch that is also off by default.</li>
+  <li>A rights gate blocks any publication that has not been explicitly
+      declared as material the operator has the right to use.</li>
+</ul>
+
+<h2>Documents</h2>
+<ul>
+  <li><a href="privacy.html">Privacy Policy</a> — what stays on the computer,
+      what leaves it, and where it goes.</li>
+  <li><a href="terms.html">Terms of Service</a> — what the application is,
+      and what its operator is responsible for.</li>
+  <li><a href="data-deletion.html">Data deletion and data handling</a> — how
+      to remove everything, and how to revoke access on each platform.</li>
+</ul>
+
+<footer>
+  <p>MovieClipsFactory is a personal desktop application. It is not a company and not a hosted service.</p>
+  <p>Contact: <a href="mailto:vidotofernandes@gmail.com">vidotofernandes@gmail.com</a></p>
+  <p><a href="privacy.html">Privacy</a>
+     · <a href="terms.html">Terms</a>
+     · <a href="data-deletion.html">Data deletion</a></p>
+</footer>
+</div>
+</body>
+</html>
+
