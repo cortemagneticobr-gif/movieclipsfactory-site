@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data deletion — MovieClipsFactory</title>
+<link rel="icon" href="assets/icon.svg">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="envoltorio">
+<header class="topo">
+  <img src="assets/icon.svg" alt="">
+  <span class="nome">MovieClipsFactory</span>
+  <nav><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="data-deletion.html" aria-current="page">Data deletion</a><a href="pt/data-deletion.html" class="idioma">Português</a></nav>
+</header>
+
+<h1>Data deletion and data handling</h1>
+<p class="sub">Last updated: 5 September 2026</p>
+
+<div class="caixa">
+<p><strong>There is no account to delete and no server to write to.</strong>
+MovieClipsFactory stores everything on the computer it runs on. Deleting your
+data means deleting it there, and revoking the application's access on each
+platform. Both are described below, and neither requires anyone's
+cooperation.</p>
+</div>
+
+<h2>1. Disconnect an account inside the application</h2>
+<p>On the <em>Social networks</em> screen, choose the account and select
+<em>Disconnect</em>. The stored token is removed from the Windows vault
+immediately, and the application calls the platform's revocation endpoint where
+one exists.</p>
+
+<h2>2. Revoke access on the platform itself</h2>
+<p>This is the authoritative step, and it works whether or not the application
+is still installed:</p>
+<div class="tabela-rolante">
+<table>
+<tr><th>Platform</th><th>Where to revoke</th></tr>
+<tr><td>YouTube / Google</td>
+    <td>Google Account → Security → Your connections to third-party apps</td></tr>
+<tr><td>TikTok</td>
+    <td>TikTok app → Settings and privacy → Security and permissions →
+        Manage app permissions</td></tr>
+<tr><td>Instagram</td>
+    <td>Instagram → Settings → Website permissions → Apps and websites</td></tr>
+<tr><td>Facebook</td>
+    <td>Facebook → Settings &amp; privacy → Settings → Apps and websites</td></tr>
+</table>
+</div>
+
+<h2>3. Delete everything on the computer</h2>
+<p>Deleting the application's folder removes the local database, the imported
+videos, the rendered clips, the logs and the encrypted token vault. There is
+no copy anywhere else, because there is nowhere else.</p>
+
+<h2>4. What is deleted, and what is not</h2>
+<div class="tabela-rolante">
+<table>
+<tr><th>Data</th><th>Where it lives</th><th>How it is deleted</th></tr>
+<tr><td>Access tokens</td><td>encrypted vault (Windows DPAPI), on the
+    computer</td><td>disconnecting the account, or deleting the folder</td></tr>
+<tr><td>Videos, clips, captions, audio</td><td>the application's folder</td>
+    <td>deleting the folder</td></tr>
+<tr><td>Projects, clips, history</td><td>local SQLite database</td>
+    <td>deleting the folder</td></tr>
+<tr><td>A clip already published to a network</td><td>that network</td>
+    <td>delete it in that network's own app — the application cannot reach
+        it once it is there</td></tr>
+</table>
+</div>
+
+<h2>5. A request by e-mail</h2>
+<p>There is no database on our side to search, so a deletion request has
+nothing to act on. If something here is unclear, or a platform asks for a
+deletion contact, write to
+<a href="mailto:vidotofernandes@gmail.com">vidotofernandes@gmail.com</a> and it will be answered.</p>
+
+<footer>
+  <p>MovieClipsFactory is a personal desktop application. It is not a company and not a hosted service.</p>
+  <p>Contact: <a href="mailto:vidotofernandes@gmail.com">vidotofernandes@gmail.com</a></p>
+  <p><a href="privacy.html">Privacy</a>
+     · <a href="terms.html">Terms</a>
+     · <a href="data-deletion.html">Data deletion</a></p>
+</footer>
+</div>
+</body>
+</html>
+
